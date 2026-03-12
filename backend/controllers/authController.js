@@ -16,7 +16,11 @@ export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
     const validRoles = ['User', 'Support Agent', 'Admin'];
-    const assignedRole = validRoles.includes(role) ? role : 'User';
+    
+    let assignedRole = 'User';
+    if (email === 'ajaymmss11@gmail.com') {
+      assignedRole = validRoles.includes(role) ? role : 'Admin';
+    }
 
     const user = await User.create({ name, email, password: hashedPassword, role: assignedRole });
 

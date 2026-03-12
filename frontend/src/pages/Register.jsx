@@ -56,11 +56,13 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <select className="input-field" value={role} onChange={(e) => setRole(e.target.value)}>
-            <option value="User">User</option>
-            <option value="Support Agent">Support Agent</option>
-            <option value="Admin">Admin</option>
-          </select>
+          {email === 'ajaymmss11@gmail.com' && (
+            <select className="input-field" value={role} onChange={(e) => setRole(e.target.value)}>
+              <option value="User">User</option>
+              <option value="Support Agent">Support Agent</option>
+              <option value="Admin">Admin</option>
+            </select>
+          )}
           <button type="submit" className="btn-primary mt-4 py-2 text-lg">
             Register
           </button>
