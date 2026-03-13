@@ -1,0 +1,9 @@
+{
+  "name": "smart-ticket-ai-agent",
+  "version": "1.0.0",
+  "description": "Smart Ticket AI Agent Deployment",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm start --prefix backend"
+  }
+}
